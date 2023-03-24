@@ -6,6 +6,7 @@
        
         while (repeat == true)
         {
+            Console.WriteLine("                                     Bienvenido a la convertidora binaria de IP's");
         #region all
         int Entrada =0;
             int p1 = 0;
@@ -16,16 +17,77 @@
             int p6 = 0;
             int p7 = 0;
             int p8 = 0;
+            bool a = true;
+            bool b= false;
 
-        Console.Write("Introduce el valor requerido: ");
-        Entrada = int.Parse(Console.ReadLine());
-        Console.Write("\n");
+
+         Console.Write("Introduce el valor requerido: ");
+            //Entrada = int.Parse(Console.ReadLine());
+            while (a = true)
+            {
+                if (!int.TryParse(Console.ReadLine(), out int num))
+                {
+
+                    Console.WriteLine("Sólo se aceptan valores enteros");
+                    Console.WriteLine("Reintroduce el número correcto");
+                    if (!int.TryParse(Console.ReadLine(), out int num1))
+                    {
+
+                        Console.WriteLine("Sólo se aceptan valores enteros");
+                        
+                    }
+                    else
+                    {
+                        Console.WriteLine("You entered {0}", num1);
+                        a = false;
+                        num1 = Entrada;
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("You entered {0}", num);
+                    a = false;
+                    num = Entrada;
+                }
+            }
+            Console.Write("\n");
         while (Entrada >= 256) 
         {
             Console.WriteLine("Introduce un valor menor de 256");
             Console.Write("Reintroduce el valor requerido: ");
-            Entrada = int.Parse(Console.ReadLine());
-        }
+                //Entrada = int.Parse(Console.ReadLine());
+
+                while (a = true)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out int num))
+                    {
+
+                        Console.WriteLine("Sólo se aceptan valores enteros");
+                        Console.WriteLine("Reintroduce el número correcto");
+                        if (!int.TryParse(Console.ReadLine(), out int num1))
+                        {
+
+                            Console.WriteLine("Sólo se aceptan valores enteros");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("You entered {0}", num1);
+                            a = false;
+                            num1 = Entrada;
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("You entered {0}", num);
+                        a = false;
+                        num = Entrada;
+                    }
+                }
+
+            }
            
             while (Entrada>0) 
             {
@@ -125,7 +187,7 @@
                 Console.WriteLine("Introduce la opción correcta: ");
                 Ext = Console.ReadLine();
             }
-            if (Ext=="Y"||Ext=="y") { Console.WriteLine("Seleccionaste Salir"); Console.ReadLine(); Console.Clear(); repeat = false; } else { Console.WriteLine("Seleccionaste continuar");Console.ReadLine();Console.Clear();}
+            if (Ext=="Y"||Ext=="y") { Console.WriteLine("Seleccionaste Salir"); Console.WriteLine("\nPresiona Enter"); Console.ReadLine(); Console.Clear(); repeat = false; } else { Console.WriteLine("Seleccionaste continuar"); Console.WriteLine("\nPresiona Enter"); Console.ReadLine();Console.Clear();}
 
             #endregion
         }
